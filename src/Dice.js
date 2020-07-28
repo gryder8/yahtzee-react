@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Die from "./Die";
 import "./Dice.css";
 
-class Dice extends Component {
+class Dice extends Component { //handles display of the dice array
   render() {
     return (
       <div className='Dice'>

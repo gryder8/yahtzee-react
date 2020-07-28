@@ -14,19 +14,19 @@ class Rule {
     Object.assign(this, params);
   }
 
-  sum(dice) {
+  sum(dice) { //sum up the face values of all dice in the array
     // sum of all dice
     return dice.reduce((prev, curr) => prev + curr);
   }
 
-  freq(dice) {
+  freq(dice) { 
     // frequencies of dice values
     const freqs = new Map();
     for (let d of dice) freqs.set(d, (freqs.get(d) || 0) + 1);
     return Array.from(freqs.values());
   }
 
-  count(dice, val) {
+  count(dice, val) { //count occurences of each num
     // # times val appears in dice
     return dice.filter(d => d === val).length;
   }
@@ -37,7 +37,7 @@ class Rule {
  * Used for rules like "sum of all ones"
  */
 
-class TotalOneNumber extends Rule {
+class TotalOneNumber extends Rule { //count amount of one number
   evalRoll = dice => {
     return this.val * this.count(dice, this.val);
   };
@@ -50,7 +50,7 @@ class TotalOneNumber extends Rule {
 
 class SumDistro extends Rule {
   evalRoll = dice => {
-    // do any of the counts meet of exceed this distro?
+    // do any of the counts meet or exceed this distro?
     return this.freq(dice).some(c => c >= this.count) ? this.sum(dice) : 0;
   };
 }

@@ -26,7 +26,7 @@ class ScoreTable extends Component {
     }
     return totalScore;
   }
-  render() {
+  render() { //generate the score descripion and pair the rows with the corresponding rule funcs
     const { scores, doScore } = this.props;
 
     return (
