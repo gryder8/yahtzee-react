@@ -83,10 +83,10 @@ class Game extends Component {
 
   displayRollInfo() {
     const messages = [
-      "0 Rolls Left",
+      "No Rolls Left!",
       "1 Roll Left",
       "2 Rolls Left",
-      "Starting Round"
+      "Starting Round..."
     ];
     return messages[this.state.rollsLeft];
   }
